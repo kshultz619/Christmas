@@ -4,6 +4,7 @@ import os
 
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
+MUSIC_FILE = "Christmas-Countdown-Long-Version-chosic.com_.mp3"
 
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
@@ -17,6 +18,17 @@ else:
 # Save the wish list to file
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
+
+# Add a music player
+st.markdown(
+    f"""
+    <audio controls autoplay loop>
+        <source src="{MUSIC_FILE}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Add a new item to the list
 st.subheader("Add a New Wish")
