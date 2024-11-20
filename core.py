@@ -4,7 +4,7 @@ import os
 
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
-MUSIC_FILE = "static/Christmas-Countdown-Long-Version-chosic.com_.mp3"
+MUSIC_FILE = "https://drive.google.com/file/d/1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B/view?usp=drive_link"
 
 # Debugging: Display the file path
 st.write(f"Music file path: {MUSIC_FILE}")
