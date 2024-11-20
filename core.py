@@ -19,10 +19,19 @@ st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
 st.title("🎄 Shultz Family Christmas List 🎁")
 
 # Display the image
-st.image(
-    IMAGE_FILE,
-    caption="Christmas Background",
-    use_column_width=True
+st.markdown(
+    f"""
+    <style>
+    body {{
+        background-image: url("{IMAGE_FILE}");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 # Load or initialize the wish list
