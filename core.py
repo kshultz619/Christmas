@@ -7,18 +7,7 @@ DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
-# "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
-
-# Debugging: Display the file path
-st.write(f"Music file path: {MUSIC_FILE}")
-
-# Add a clickable link to test file accessibility
-st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
-
-# Title of the app
-st.title("🎄 Shultz Family Christmas List 🎁")
-
-# Display the image
+# Inject custom CSS for the full-page background
 st.markdown(
     f"""
     <style>
@@ -34,22 +23,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Load or initialize the wish list
-if os.path.exists(DATA_FILE):
-    wish_list = pd.read_csv(DATA_FILE)
-else:
-    wish_list = pd.DataFrame(columns=["Name", "Gift", "Link"])
-
-# Save the wish list to file
-def save_wish_list():
-    wish_list.to_csv(DATA_FILE, index=False)
-
-
 # Debugging: Display the file path
 st.write(f"Music file path: {MUSIC_FILE}")
+st.write(f"Image file path: {IMAGE_FILE}")
 
 # Add a clickable link to test file accessibility
 st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
+
+# Title of the app
+st.title("🎄 Shultz Family Christmas List 🎁")
 
 # Add a music player
 st.markdown(
@@ -61,6 +43,16 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# Load or initialize the wish list
+if os.path.exists(DATA_FILE):
+    wish_list = pd.read_csv(DATA_FILE)
+else:
+    wish_list = pd.DataFrame(columns=["Name", "Gift", "Link"])
+
+# Save the wish list to file
+def save_wish_list():
+    wish_list.to_csv(DATA_FILE, index=False)
 
 # Add a new item to the list
 st.subheader("Add a New Wish")
