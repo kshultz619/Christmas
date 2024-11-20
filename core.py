@@ -6,6 +6,12 @@ import os
 DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "static/Christmas-Countdown-Long-Version-chosic.com_.mp3"
 
+# Debugging: Display the file path
+st.write(f"Music file path: {MUSIC_FILE}")
+
+# Add a clickable link to test file accessibility
+st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
+
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
 
@@ -22,7 +28,7 @@ def save_wish_list():
 # Add a music player
 st.markdown(
     f"""
-    <audio autoplay loop>
+    <audio controls loop>
         <source src="{MUSIC_FILE}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
