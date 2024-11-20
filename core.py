@@ -7,7 +7,7 @@ DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
-# Inject custom CSS for the full-page background
+# Inject custom CSS for the full-page background and table styling
 st.markdown(
     f"""
     <style>
@@ -17,6 +17,17 @@ st.markdown(
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
+    }}
+    table {{
+        background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        width: 100%;
+    }}
+    th, td {{
+        padding: 10px;
+        text-align: center;
     }}
     </style>
     """,
@@ -75,23 +86,11 @@ with st.form("add_item_form", clear_on_submit=True):
 # Display the current wish list
 st.subheader("Current Wish List")
 if not wish_list.empty:
-    # Add delete buttons
-    for index, row in wish_list.iterrows():
-        col1, col2, col3, col4 = st.columns([3, 3, 3, 1])
-        with col1:
-            st.write(row["Name"])
-        with col2:
-            st.write(row["Gift"])
-        with col3:
-            if pd.notna(row["Link"]) and row["Link"]:
-                st.markdown(f"[{row['Gift']} link]({row['Link']})", unsafe_allow_html=True)
-            else:
-                st.write("No Link Provided")
-        with col4:
-            if st.button("Delete", key=f"delete_{index}"):
-                wish_list = wish_list.drop(index).reset_index(drop=True)
-                save_wish_list()  # Save changes to file
-                st.experimental_rerun()  # Refresh the page
+    # Render the table with the applied styles
+    st.markdown(
+        wish_list.to_html(escape=False, index=False),
+        unsafe_allow_html=True,
+    )
 else:
     st.write("No items in the wish list yet. Add one above!")
 
