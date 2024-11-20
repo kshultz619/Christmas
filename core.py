@@ -4,7 +4,7 @@ import os
 
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
-MUSIC_FILE = "Christmas-Countdown-Long-Version-chosic.com_.mp3"
+MUSIC_FILE = "static/Christmas-Countdown-Long-Version-chosic.com_.mp3"
 
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
@@ -21,9 +21,9 @@ def save_wish_list():
 
 # Add a music player
 st.markdown(
-    f"""
-    <audio controls autoplay loop>
-        <source src="{MUSIC_FILE}" type="audio/mpeg">
+    """
+    <audio autoplay loop>
+        <source src="/static/Christmas-Countdown-Long-Version-chosic.com_.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     """,
