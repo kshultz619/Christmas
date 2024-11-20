@@ -5,7 +5,7 @@ import os
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
-IMAGE_FILE = "https://imgur.com/pirD3jd"
+IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
 # "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 
