@@ -7,7 +7,7 @@ DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
-# Inject custom CSS for the full-page background and table styling
+# Inject custom CSS for the full-page background and input field styling
 st.markdown(
     f"""
     <style>
@@ -18,16 +18,36 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
     }}
-    table {{
-        background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
-        border-radius: 10px;
-        padding: 10px;
+    /* Style input fields */
+    input[type="text"], select {{
+        background-color: rgba(255, 0, 0, 0.8); /* Red background with transparency */
         color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
         width: 100%;
     }}
-    th, td {{
+    textarea {{
+        background-color: rgba(255, 0, 0, 0.8);
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
         padding: 10px;
-        text-align: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }}
+    button {{
+        background-color: rgba(255, 0, 0, 0.8);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }}
+    button:hover {{
+        background-color: rgba(200, 0, 0, 0.8);
     }}
     </style>
     """,
