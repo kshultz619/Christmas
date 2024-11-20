@@ -11,7 +11,6 @@ IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
 # Debugging: Display the file path
 st.write(f"Music file path: {MUSIC_FILE}")
-st.write(f"Image file path: {IMAGE_FILE}")
 
 # Add a clickable link to test file accessibility
 st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
