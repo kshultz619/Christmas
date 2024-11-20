@@ -5,18 +5,29 @@ import os
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
 MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
-
+IMAGE_FILE = "https://drive.google.com/uc?export=download&id=1P6wAZjQFvB_ONbJCload9WXDA7znzjSE"
 
 # "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 
 # Debugging: Display the file path
 st.write(f"Music file path: {MUSIC_FILE}")
+st.write(f"Image file path: {IMAGE_FILE}")
 
 # Add a clickable link to test file accessibility
 st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
 
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
+
+# Display the image
+st.markdown(
+    f"""
+    <div style="text-align: center;">
+        <img src="{IMAGE_FILE}" alt="Christmas Background" style="width:80%; border-radius:10px;">
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Load or initialize the wish list
 if os.path.exists(DATA_FILE):
