@@ -4,7 +4,6 @@ import os
 
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
-MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 
 # Debugging: Display the file path
 st.write(f"Music file path: {MUSIC_FILE}")
@@ -25,10 +24,18 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
+MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
+
+# Debugging: Display the file path
+st.write(f"Music file path: {MUSIC_FILE}")
+
+# Add a clickable link to test file accessibility
+st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
+
 # Add a music player
 st.markdown(
     f"""
-    <audio controls loop>
+    <audio controls loop autoplay>
         <source src="{MUSIC_FILE}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
