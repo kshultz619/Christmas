@@ -11,7 +11,7 @@ IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 st.markdown(
     f"""
     <style>
-    body {{
+    .stApp {{
         background-image: url("{IMAGE_FILE}");
         background-size: cover;
         background-attachment: fixed;
