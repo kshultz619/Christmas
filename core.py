@@ -21,9 +21,9 @@ def save_wish_list():
 
 # Add a music player
 st.markdown(
-    """
+    f"""
     <audio autoplay loop>
-        <source src="/static/Christmas-Countdown-Long-Version-chosic.com_.mp3" type="audio/mpeg">
+        <source src="{MUSIC_FILE}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     """,
