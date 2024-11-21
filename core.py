@@ -19,7 +19,7 @@ st.markdown(
         background-repeat: no-repeat;
     }}
     /* Styling for the Add a New Wish section */
-    .data-entry {{
+    data-entry {{
         background-color: rgba(0, 100, 0, 0.8); /* Darker green with transparency */
         border-radius: 10px;
         padding: 10px;
