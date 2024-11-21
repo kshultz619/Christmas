@@ -67,9 +67,9 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# Render the "Add a New Wish" section with green background
+# Fully wrap the "Add a New Wish" section, including subtitle, inputs, and button
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
-st.markdown("<h3 style='color: white; text-align: center;'>Add a New Wish</h3>", unsafe_allow_html=True)
+st.subheader("Add a New Wish")  # Subtitle inside the green background
 with st.form("add_item_form", clear_on_submit=True):
     name = st.selectbox("Name", ["Kevin", "Jackie", "Robin", "Joe", "Dana", "Dan"])
     gift = st.text_input("Gift")
