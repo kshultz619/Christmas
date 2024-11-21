@@ -19,15 +19,21 @@ st.markdown(
     }}
     /* Styling for the title */
     h1 {{
-        font-size: 36px !important; /* Keep the title size */
+        font-size: 36px !important; /* Ensure the title is prominent */
         color: white !important; /* Keep title white */
-        text-shadow: 2px 2px 4px black; /* Add shadow to title */
+        text-shadow: 2px 2px 4px black; /* Add shadow for clarity */
     }}
-    /* Styling for the data-entry section */
+    /* Styling specific to the Add a New Wish section */
     .data-entry {{
-        color: white !important; /* Make text white */
-        text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
-        font-size: 24px !important; /* Bigger font size for the data-entry section */
+        color: white !important; /* White text */
+        text-shadow: 2px 2px 4px black; /* Clear text shadow */
+        font-size: 24px !important; /* Larger font size for Add a New Wish */
+    }}
+    /* Styling for all other subheaders */
+    h2, h3 {{
+        color: white !important; /* White text */
+        text-shadow: 2px 2px 4px black; /* Add text shadow */
+        font-size: 28px !important; /* Consistent subheader size */
     }}
     /* Styling for the table */
     table {{
@@ -42,7 +48,7 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 2px 2px 4px black; /* Apply shadow to table text */
-        font-size: 20px; /* Keep font size for table content */
+        font-size: 20px; /* Table content font size */
     }}
     </style>
     """,
