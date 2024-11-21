@@ -19,18 +19,15 @@ st.markdown(
     }}
     /* Styling for the title */
     h1 {{
-        font-size: 36px !important; /* Restore the title's size */
+        font-size: 36px !important; /* Keep the title size */
         color: white !important; /* Keep title white */
         text-shadow: 2px 2px 4px black; /* Add shadow to title */
     }}
-    /* Styling for all text except the title */
-    .data-entry, .stMarkdown, h2, h3, h4, h5, h6, label {{
-        color: white !important; /* Make all text white */
+    /* Styling for the data-entry section */
+    .data-entry {{
+        color: white !important; /* Make text white */
         text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
-        font-size: 20px !important; /* Increased font size for all other text */
-    }}
-    .stMarkdown p {{
-        font-size: 20px !important; /* Increase paragraph font size */
+        font-size: 24px !important; /* Bigger font size for the data-entry section */
     }}
     /* Styling for the table */
     table {{
@@ -45,7 +42,7 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 2px 2px 4px black; /* Apply shadow to table text */
-        font-size: 20px; /* Increase font size for table content */
+        font-size: 20px; /* Keep font size for table content */
     }}
     </style>
     """,
@@ -65,9 +62,9 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# "Add a New Wish" section with styled text
+# "Add a New Wish" section with larger text
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
-st.subheader("Add a New Wish")
+st.markdown('<h3 style="text-align: center;">Add a New Wish</h3>', unsafe_allow_html=True)
 with st.form("add_item_form", clear_on_submit=True):
     name = st.selectbox("Name", ["Kevin", "Jackie", "Robin", "Joe", "Dana", "Dan"])
     gift = st.text_input("Gift")
