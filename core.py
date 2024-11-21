@@ -17,10 +17,14 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
     }}
-    /* Styling for the Add a New Wish section */
+    /* Styling for all text */
     .data-entry, .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
         color: white !important; /* Make all text white */
         text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
+        font-size: 20px !important; /* Increased font size */
+    }}
+    .stMarkdown p {{
+        font-size: 20px !important; /* Increase paragraph font size */
     }}
     /* Styling for the table */
     table {{
@@ -35,6 +39,7 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 2px 2px 4px black; /* Apply shadow to table text */
+        font-size: 20px; /* Increase font size for table content */
     }}
     </style>
     """,
