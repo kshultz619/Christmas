@@ -4,7 +4,6 @@ import os
 
 # File to store the wish list
 DATA_FILE = "wish_list.csv"
-MUSIC_FILE = "https://drive.google.com/uc?export=download&id=1-kPl_t-G9j4Vxa_AlfbsiAn4wZO6tF4B"
 IMAGE_FILE = "https://i.imgur.com/pirD3jd.jpg"
 
 # Inject custom CSS for styling
@@ -45,17 +44,6 @@ st.markdown(
 
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
-
-# Add a music player
-st.markdown(
-    f"""
-    <audio controls loop autoplay>
-        <source src="{MUSIC_FILE}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    """,
-    unsafe_allow_html=True,
-)
 
 # Load or initialize the wish list
 if os.path.exists(DATA_FILE):
