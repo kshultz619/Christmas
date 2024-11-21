@@ -18,10 +18,9 @@ st.markdown(
         background-repeat: no-repeat;
     }}
     /* Styling for the Add a New Wish section */
-    .data-entry {{
-        color: white !important; /* Keep text white */
-        text-shadow: 2px 2px 4px black; /* Ensure proper shadow for readability */
-        font-size: 24px !important; /* Increase font size */
+    .data-entry, .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
+        color: white !important; /* Make all text white */
+        text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
     }}
     /* Styling for the table */
     table {{
@@ -57,7 +56,7 @@ def save_wish_list():
 
 # "Add a New Wish" section with styled text
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
-st.markdown('<h3 style="text-align: center;">Add a New Wish</h3>', unsafe_allow_html=True)
+st.subheader("Add a New Wish")
 with st.form("add_item_form", clear_on_submit=True):
     name = st.selectbox("Name", ["Kevin", "Jackie", "Robin", "Joe", "Dana", "Dan"])
     gift = st.text_input("Gift")
