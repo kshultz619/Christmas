@@ -24,7 +24,7 @@ st.markdown(
     }}
     /* Styling for the table */
     table {{
-        background-color: rgba(0, 128, 0, 0.9); /* Brighter green with slight transparency */
+        background-color: rgba(0, 128, 0, 0.5); /* Brighter green with slight transparency */
         border-radius: 10px;
         padding: 10px;
         color: white;
