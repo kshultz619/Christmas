@@ -55,8 +55,8 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# Fully wrap the "Add a New Wish" section, including subtitle, inputs, and button
-st.markdown('<div class="data-entry">', unsafe_allow_html=True)  # Begin green background wrapper
+# Fully wrap the "Add a New Wish" section with a green background
+st.markdown('<div class="data-entry">', unsafe_allow_html=True)
 st.markdown('<h3 style="text-align: center; color: white;">Add a New Wish</h3>', unsafe_allow_html=True)
 with st.form("add_item_form", clear_on_submit=True):
     name = st.selectbox("Name", ["Kevin", "Jackie", "Robin", "Joe", "Dana", "Dan"])
@@ -73,7 +73,7 @@ with st.form("add_item_form", clear_on_submit=True):
             st.success(f"Added: {name}'s gift '{gift}' to the list!")
         else:
             st.error("Both Name and Gift are required to add to the list.")
-st.markdown('</div>', unsafe_allow_html=True)  # End green background wrapper
+st.markdown('</div>', unsafe_allow_html=True)  # End the green background wrapper
 
 # Display the current wish list
 st.subheader("Current Wish List")
