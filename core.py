@@ -67,7 +67,7 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# Wrap the entire "Add a New Wish" section in a green background
+# Fully wrap the "Add a New Wish" section in a green background
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
 st.subheader("Add a New Wish")
 with st.form("add_item_form", clear_on_submit=True):
