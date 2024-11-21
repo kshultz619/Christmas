@@ -21,10 +21,10 @@ st.markdown(
     /* Styling for the Add a New Wish section */
     .data-entry {{
         background-color: rgba(0, 100, 0, 0.8); /* Darker green with transparency */
-        padding: 20px;
         border-radius: 10px;
-        margin-bottom: 20px;
+        padding: 10px;
         color: white;
+        width: 100%;
     }}
     /* Styling for the table */
     table {{
