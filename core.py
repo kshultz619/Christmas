@@ -19,12 +19,12 @@ st.markdown(
         background-repeat: no-repeat;
     }}
     /* Styling for the Add a New Wish section */
-    data-entry {{
+    .data-entry {{
         background-color: rgba(0, 100, 0, 0.8); /* Darker green with transparency */
         border-radius: 10px;
-        padding: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
         color: white;
-        width: 100%;
     }}
     /* Styling for the table */
     table {{
@@ -67,9 +67,9 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# Fully wrap the "Add a New Wish" section in a green background
+# Render the "Add a New Wish" section with green background
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
-st.subheader("Add a New Wish")
+st.markdown("<h3 style='color: white; text-align: center;'>Add a New Wish</h3>", unsafe_allow_html=True)
 with st.form("add_item_form", clear_on_submit=True):
     name = st.selectbox("Name", ["Kevin", "Jackie", "Robin", "Joe", "Dana", "Dan"])
     gift = st.text_input("Gift")
