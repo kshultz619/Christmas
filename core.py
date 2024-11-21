@@ -18,10 +18,9 @@ st.markdown(
         background-repeat: no-repeat;
     }}
     /* Styling for the Add a New Wish section */
-    .data-entry {{
+    .data-entry, .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
         color: white !important; /* Make all text white */
         text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
-        font-size: 24px !important; /* Increase font size */
     }}
     /* Styling for the table */
     table {{
