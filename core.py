@@ -17,20 +17,15 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
     }}
-    /* Styling for the Add a New Wish section */
-    .data-entry {{
-        color: white !important; /* Keep text white */
-        text-shadow: 2px 2px 4px black; /* Ensure proper shadow for readability */
-    }}
-    .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
-        color: white !important; /* Keep all other text white */
-        text-shadow: 2px 2px 4px black; /* Add clear text shadow */
-    }}
-    /* Styling for the table */
-    table {{
+    /* Styling for the table container */
+    .table-container {{
         background-color: rgba(0, 128, 0, 0.9); /* Brighter green with slight transparency */
         border-radius: 10px;
-        padding: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }}
+    /* Styling for table content */
+    table {{
         color: white;
         width: 100%;
     }}
@@ -39,6 +34,11 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 2px 2px 4px black; /* Apply shadow to table text */
+    }}
+    /* Styling for other text and subheaders */
+    .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
+        color: white !important; /* Keep all text white */
+        text-shadow: 2px 2px 4px black; /* Add clear text shadow */
     }}
     </style>
     """,
@@ -81,6 +81,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # Display the current wish list with delete functionality
 st.subheader("Current Wish List")
 if not wish_list.empty:
+    st.markdown('<div class="table-container">', unsafe_allow_html=True)  # Green background wrapper
     for i, row in wish_list.iterrows():
         col1, col2, col3, col4 = st.columns([3, 3, 3, 1])
         with col1:
@@ -97,5 +98,6 @@ if not wish_list.empty:
                 wish_list = wish_list.drop(i).reset_index(drop=True)
                 save_wish_list()
                 st.experimental_rerun()
+    st.markdown('</div>', unsafe_allow_html=True)  # Close green background wrapper
 else:
     st.write("No items in the wish list yet. Add one above!")
