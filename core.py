@@ -17,11 +17,17 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
     }}
-    /* Styling for all text */
-    .data-entry, .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
+    /* Styling for the title */
+    h1 {{
+        font-size: 36px !important; /* Restore the title's size */
+        color: white !important; /* Keep title white */
+        text-shadow: 2px 2px 4px black; /* Add shadow to title */
+    }}
+    /* Styling for all text except the title */
+    .data-entry, .stMarkdown, h2, h3, h4, h5, h6, label {{
         color: white !important; /* Make all text white */
         text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
-        font-size: 20px !important; /* Increased font size */
+        font-size: 20px !important; /* Increased font size for all other text */
     }}
     .stMarkdown p {{
         font-size: 20px !important; /* Increase paragraph font size */
