@@ -43,13 +43,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Debugging: Display the file path
-st.write(f"Music file path: {MUSIC_FILE}")
-st.write(f"Image file path: {IMAGE_FILE}")
-
-# Add a clickable link to test file accessibility
-st.markdown(f"[Test MP3 File]({MUSIC_FILE})")
-
 # Title of the app
 st.title("🎄 Shultz Family Christmas List 🎁")
 
@@ -74,7 +67,7 @@ else:
 def save_wish_list():
     wish_list.to_csv(DATA_FILE, index=False)
 
-# Add a new item to the list with a green background
+# Wrap the entire "Add a New Wish" section in a green background
 st.markdown('<div class="data-entry">', unsafe_allow_html=True)
 st.subheader("Add a New Wish")
 with st.form("add_item_form", clear_on_submit=True):
