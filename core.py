@@ -17,15 +17,16 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
     }}
-    /* Styling for the table container */
-    .table-container {{
+    /* Styling for the Add a New Wish section */
+    .data-entry, .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
+        color: white !important; /* Make all text white */
+        text-shadow: 2px 2px 4px black; /* Add clear text shadow for readability */
+    }}
+    /* Styling for the table */
+    table {{
         background-color: rgba(0, 128, 0, 0.9); /* Brighter green with slight transparency */
         border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }}
-    /* Styling for table content */
-    table {{
+        padding: 10px;
         color: white;
         width: 100%;
     }}
@@ -34,11 +35,6 @@ st.markdown(
         text-align: center;
         color: white;
         text-shadow: 2px 2px 4px black; /* Apply shadow to table text */
-    }}
-    /* Styling for other text and subheaders */
-    .stMarkdown, h1, h2, h3, h4, h5, h6, label {{
-        color: white !important; /* Keep all text white */
-        text-shadow: 2px 2px 4px black; /* Add clear text shadow */
     }}
     </style>
     """,
@@ -78,26 +74,19 @@ with st.form("add_item_form", clear_on_submit=True):
             st.error("Both Name and Gift are required to add to the list.")
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Display the current wish list with delete functionality
+# Display the current wish list
 st.subheader("Current Wish List")
 if not wish_list.empty:
-    st.markdown('<div class="table-container">', unsafe_allow_html=True)  # Green background wrapper
-    for i, row in wish_list.iterrows():
-        col1, col2, col3, col4 = st.columns([3, 3, 3, 1])
-        with col1:
-            st.text(row["Name"])
-        with col2:
-            st.text(row["Gift"])
-        with col3:
-            if pd.notna(row["Link"]) and row["Link"]:
-                st.markdown(f"[Link]({row['Link']})", unsafe_allow_html=True)
-            else:
-                st.text("No Link")
-        with col4:
-            if st.button("❌", key=f"delete_{i}"):
-                wish_list = wish_list.drop(i).reset_index(drop=True)
-                save_wish_list()
-                st.experimental_rerun()
-    st.markdown('</div>', unsafe_allow_html=True)  # Close green background wrapper
+    # Render the table with the applied styles
+    st.markdown(
+        wish_list.to_html(escape=False, index=False),
+        unsafe_allow_html=True,
+    )
 else:
     st.write("No items in the wish list yet. Add one above!")
+
+# Option to clear the list
+if st.button("Clear Wish List"):
+    wish_list = pd.DataFrame(columns=["Name", "Gift", "Link"])
+    save_wish_list()  # Save changes to file
+    st.success("Wish list cleared!")
