@@ -77,7 +77,14 @@ st.markdown('</div>', unsafe_allow_html=True)
 # Display the current wish list
 st.subheader("Current Wish List")
 if not wish_list.empty:
-    # Render the table with the applied styles
+    # Modify the "Link" column to display "{gift} link"
+    wish_list["Link"] = wish_list.apply(
+        lambda row: f'<a href="{row["Link"]}" target="_blank">{row["Gift"]} link</a>'
+        if pd.notna(row["Link"]) and row["Link"]
+        else "No Link",
+        axis=1,
+    )
+    # Render the table with the updated link formatting
     st.markdown(
         wish_list.to_html(escape=False, index=False),
         unsafe_allow_html=True,
